@@ -21,21 +21,33 @@ public class ActivityTwo extends Activity {
 
 	// Lifecycle counters
 
-	// TODO:
-	// Create variables named 	
-	// mCreate, mRestart, mStart and mResume 	
-	// to count calls to onCreate(), onRestart(), onStart() and
-	// onResume(). These variables should not be defined as static.
-	
-	// You will need to increment these variables' values when their
-	// corresponding lifecycle methods get called.
-	
+	/// TODO:
+    // Create variables named
+    // mCreate, mRestart, mStart and mResume
+    // to count calls to onCreate(), onRestart(), onStart() and
+    // onResume(). These variables should not be defined as static.
 
-	
-	
-	// TODO: Create variables for each of the TextViews
-	// named  mTvCreate, mTvRestart, mTvStart, mTvResume.
-	// for displaying the current count of each counter variable
+    // You will need to increment these variables' values when their
+    // corresponding lifecycle methods get called.
+
+    int mCreate;
+    int mRestart;
+    int mStart;
+    int mResume;
+
+    // TODO: Create variables for each of the TextViews
+    // named mTvCreate, mTvRestart, mTvStart, mTvResume.
+    // for displaying the current count of each counter variable
+
+    TextView mTvCreate;
+    TextView mTvRestart;
+    TextView mTvStart;
+    TextView mTvResume;
+
+    static final String STATE_CREATE_COUNT = "create";
+    static final String STATE_RESTART_COUNT = "restart";
+    static final String STATE_START_COUNT = "start";
+    static final String STATE_RESUME_COUNT = "resume";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +58,10 @@ public class ActivityTwo extends Activity {
 		// Hint: Access the TextView by calling Activity's findViewById()
 		// textView1 = (TextView) findViewById(R.id.textView1);
 
-
-		
-		
-		
+        mTvCreate = (TextView)findViewById(R.id.create);
+        mTvRestart = (TextView)findViewById(R.id.restart);
+        mTvStart = (TextView)findViewById(R.id.start);
+        mTvResume = (TextView)findViewById(R.id.resume);
 		
 		Button closeButton = (Button) findViewById(R.id.bClose); 
 		closeButton.setOnClickListener(new OnClickListener() {
@@ -60,7 +72,7 @@ public class ActivityTwo extends Activity {
 				// TODO:
 				// This function closes Activity Two
 				// Hint: use Context's finish() method
-
+                ActivityTwo.this.finish();
 				
 			
 			}
@@ -72,12 +84,10 @@ public class ActivityTwo extends Activity {
 			// TODO:
 			// Restore value of counters from saved state
 			// Only need 4 lines of code, one for every count variable
-
-
-			
-			
-			
-			
+            mCreate = savedInstanceState.getInt(STATE_CREATE_COUNT);
+            mRestart = savedInstanceState.getInt(STATE_RESTART_COUNT);
+            mStart = savedInstanceState.getInt(STATE_START_COUNT);
+            mResume = savedInstanceState.getInt(STATE_RESUME_COUNT);
 		}
 
 		// Emit LogCat message
@@ -86,10 +96,8 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface via the displayCounts() method
-
-
-		
-		
+        mCreate++;
+        displayCounts();
 	}
 
 	// Lifecycle callback methods overrides
@@ -104,10 +112,8 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
-
-		
-		
+        mStart++;
+        displayCounts();
 	}
 
 	@Override
@@ -120,10 +126,9 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
-
-	
-	}
+        mResume++;
+        displayCounts();
+    }
 
 	@Override
 	public void onPause() {
@@ -151,10 +156,8 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Update the appropriate count variable
 		// Update the user interface
-
-
-	
-	
+        mRestart++;
+        displayCounts();
 	}
 
 	@Override
@@ -171,13 +174,10 @@ public class ActivityTwo extends Activity {
 		// TODO:
 		// Save counter state information with a collection of key-value pairs
 		// 4 lines of code, one for every count variable
-
-
-
-		
-		
-		
-		
+        savedInstanceState.putInt(STATE_CREATE_COUNT, mCreate);
+        savedInstanceState.putInt(STATE_RESTART_COUNT, mRestart);
+        savedInstanceState.putInt(STATE_START_COUNT, mStart);
+        savedInstanceState.putInt(STATE_RESUME_COUNT, mResume);
 	}
 
 	// Updates the displayed counters
@@ -187,12 +187,10 @@ public class ActivityTwo extends Activity {
 	public void displayCounts() {
 
 		// TODO - uncomment these lines
-	/*
+
 		mTvCreate.setText("onCreate() calls: " + mCreate);
 		mTvStart.setText("onStart() calls: " + mStart);
 		mTvResume.setText("onResume() calls: " + mResume);
 		mTvRestart.setText("onRestart() calls: " + mRestart);
-	*/
-	
 	}
 }
