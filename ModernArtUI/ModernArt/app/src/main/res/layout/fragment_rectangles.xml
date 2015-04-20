@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/container_margin_edges"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/rectangles_container"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="@dimen/part_two_thirds"
+            android:layout_marginRight="@dimen/half_margin_between_rectangles">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/view_left_top"
+                android:background="@color/left_top"
+                android:layout_weight="@dimen/part_half"
+                android:layout_marginBottom="@dimen/half_margin_between_rectangles"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/view_left_bottom"
+                android:background="@color/left_bottom"
+                android:layout_weight="@dimen/part_half"
+                android:layout_marginTop="@dimen/half_margin_between_rectangles"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="@dimen/part_almost_a_half"
+            android:layout_marginLeft="@dimen/half_margin_between_rectangles">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/view_right_top"
+                android:background="@color/right_top"
+                android:layout_weight="@dimen/part_third"
+                android:layout_marginBottom="@dimen/half_margin_between_rectangles"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/view_right_middle"
+                android:background="@color/right_middle"
+                android:layout_weight="@dimen/part_third"
+                android:layout_marginTop="@dimen/half_margin_between_rectangles"
+                android:layout_marginBottom="@dimen/half_margin_between_rectangles"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/view_right_bottom"
+                android:background="@color/right_bottom"
+                android:layout_weight="@dimen/part_third"
+                android:layout_marginTop="@dimen/half_margin_between_rectangles"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_below="@+id/rectangles_container"
+        android:layout_marginTop="@dimen/seekbar_margin_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout >

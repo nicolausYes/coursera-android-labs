@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="left_top">#99CC00</color>
+    <color name="left_bottom">#33B5E5</color>
+
+    <color name="right_top">#AA66CC</color>
+    <color name="right_middle">#DDDDDD</color>
+    <color name="right_bottom">#FFBB33</color>
+
+</resources>

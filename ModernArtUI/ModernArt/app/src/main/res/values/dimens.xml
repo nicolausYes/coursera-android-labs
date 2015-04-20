@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="part_half" format="float" type="dimen">0.5</item>
+    <item name="part_third" format="float" type="dimen">0.33</item>
+    <item name="part_two_thirds" format="float" type="dimen">0.66</item>
+    <item name="part_two_of_five" format="float" type="dimen">0.6</item>
+    <item name="part_almost_a_half" format="float" type="dimen">0.45</item>
+
+    <dimen name="container_margin_edges">11dp</dimen>
+    <dimen name="half_margin_between_rectangles">4dp</dimen>
+    <dimen name="seekbar_margin_top">@dimen/container_margin_edges</dimen>
+
+
+
+</resources>

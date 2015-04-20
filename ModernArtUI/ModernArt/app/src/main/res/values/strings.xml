@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ModernArt</string>
+    <string name="action_more_information">More information</string>
+    <string name="default_hue">default_hue</string>
+
+    <string name="dialog_visit_moma">Visit MOMA</string>
+    <string name="dialog_not_now">Not now</string>
+    <string name="dialog_text">Do you want to visit MOMA website?</string>
+    <string name="dialog_view_url">View URL</string>
+    <string name="moma_url">http://www.moma.org</string>
+</resources>
